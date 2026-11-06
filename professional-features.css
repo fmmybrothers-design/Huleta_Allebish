@@ -1,0 +1,384 @@
+/* Professional Features Styles */
+
+/* Real GitHub Stats */
+#github-real-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.real-stat-item {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.real-stat-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 5px 20px rgba(88, 166, 255, 0.2);
+}
+
+.real-stat-item i {
+    font-size: 24px;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.real-stat-item .stat-value {
+    display: block;
+    font-family: var(--font-pixelated);
+    font-size: 28px;
+    color: var(--text-primary);
+    margin: 10px 0;
+}
+
+.real-stat-item .stat-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* GitHub Recent Activity */
+#github-recent-activity {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.github-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.github-activity-item:hover {
+    border-color: var(--accent-blue);
+    transform: translateX(5px);
+}
+
+.github-activity-item i {
+    font-size: 18px;
+    color: var(--accent-green);
+    margin-top: 2px;
+}
+
+.activity-details {
+    flex: 1;
+}
+
+.activity-message {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0 0 5px 0;
+}
+
+.activity-message strong {
+    color: var(--accent-blue);
+}
+
+.activity-time {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Contact Form Validation */
+.field-error {
+    display: block;
+    color: #f85149;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.field-invalid {
+    border-color: #f85149 !important;
+}
+
+.form-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideInDown 0.3s ease;
+}
+
+.success-message {
+    background: rgba(86, 211, 100, 0.1);
+    border: 1px solid rgba(86, 211, 100, 0.3);
+    color: var(--accent-green);
+}
+
+.error-message {
+    background: rgba(248, 81, 73, 0.1);
+    border: 1px solid rgba(248, 81, 73, 0.3);
+    color: #f85149;
+}
+
+.form-message i {
+    font-size: 24px;
+}
+
+.form-message p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Theme Toggle */
+.theme-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--accent-blue);
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(88, 166, 255, 0.3);
+}
+
+.theme-icon-dark,
+.theme-icon-light {
+    position: absolute;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+    opacity: 1;
+    transform: rotate(0deg);
+    color: var(--accent-blue);
+}
+
+[data-theme="dark"] .theme-icon-light {
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+[data-theme="light"] .theme-icon-light {
+    opacity: 1;
+    transform: rotate(0deg);
+    color: #f59e0b;
+}
+
+[data-theme="light"] .theme-icon-dark {
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.testimonial-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 60px;
+    color: var(--accent-blue);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-blue);
+}
+
+.testimonial-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.testimonial-info p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.testimonial-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-style: italic;
+    margin: 15px 0;
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.testimonial-rating i {
+    color: #f59e0b;
+    font-size: 14px;
+}
+
+.testimonial-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    color: var(--accent-blue);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.testimonial-link:hover {
+    gap: 8px;
+}
+
+/* Project Case Studies */
+.case-study {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.case-study-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.case-study-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.case-study-tag {
+    background: rgba(88, 166, 255, 0.1);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    color: var(--accent-blue);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.case-study-section {
+    margin: 20px 0;
+}
+
+.case-study-section h4 {
+    color: var(--accent-purple);
+    margin-bottom: 10px;
+}
+
+.case-study-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 15px;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+}
+
+.metric-value {
+    display: block;
+    font-size: 32px;
+    font-family: var(--font-pixelated);
+    color: var(--accent-green);
+    margin-bottom: 5px;
+}
+
+.metric-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .theme-toggle-container {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .theme-toggle-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
